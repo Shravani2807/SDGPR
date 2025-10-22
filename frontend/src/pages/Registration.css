@@ -1,0 +1,117 @@
+/* src/pages/Registration.css */
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f8ff;
+    padding: 20px;
+}
+
+.registration-form {
+    background-color: #e1f5fe;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.registration-form h2 {
+    color: #0277bd;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.registration-form p {
+    color: #039be5;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0277bd;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #b3e5fc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0288d1;
+    box-shadow: 0 0 8px rgba(2, 136, 209, 0.2);
+}
+
+.split-group {
+    display: flex;
+    gap: 20px;
+}
+
+.split-group .form-group {
+    width: 50%;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.register-btn:hover {
+    background-color: #0288d1;
+}
+
+.error-message {
+    color: #D32F2F;
+    font-size: 0.85rem;
+    margin-top: 5px;
+}
+
+/* --- NEW: Star-based Password Strength Styles --- */
+.password-strength-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    height: 20px;
+    /* Prevents layout jumping when indicator appears */
+}
+
+.password-strength-stars {
+    display: flex;
+    gap: 3px;
+}
+
+.strength-star {
+    transition: color 0.3s ease;
+}
+
+.password-strength-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}

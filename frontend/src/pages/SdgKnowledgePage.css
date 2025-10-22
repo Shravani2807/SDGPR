@@ -1,0 +1,241 @@
+/* src/pages/SdgKnowledgePage.css */
+
+.knowledge-page-wrapper {
+    width: 100%;
+    background-color: #ffffff;
+}
+
+/* Re-using header & nav styles for consistency. Ideally, these would be in a shared CSS file. */
+.header {
+    width: 100%;
+    padding: 15px 0;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #222;
+}
+
+.logo-icon {
+    font-size: 28px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.header-link {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+}
+
+.navigation {
+    width: 100%;
+    background-color: #2c3e50;
+}
+
+.navigation .container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    color: #333;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Main content styles for the knowledge page */
+.main-content-knowledge {
+    background-color: #5b86e5 ;
+    width: 100%;
+    padding: 60px 0;
+}
+
+.knowledge-section {
+    padding: 60px 0;
+    background-color: #5b86e5;
+}
+
+.knowledge-section.alt-background {
+    background-color: #f7f9fc;
+}
+
+.knowledge-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #edf0f3;
+}
+
+.knowledge-intro {
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    line-height: 1.7;
+    color: #fafafa;
+}
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.overview-card {
+    padding: 30px;
+    border-radius: 8px;
+    border-top-width: 5px;
+    border-top-style: solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: #f0f0f0;
+}
+
+.overview-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.overview-card.sdg10 {
+    border-top-color: #d91667;
+    /* SDG 10 color from homepage */
+    color: #d91667;
+}
+
+.overview-card.sdg11 {
+    border-top-color: #fca315;
+    /* SDG 11 color from homepage */
+    color: #fca315;
+}
+
+.overview-card p {
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+.target-card {
+    background-color: #f6f6f8;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 50px #5b86e5;
+    border-left: 5px solid #616060;
+}
+
+.target-title {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.sdg10-title {
+    color: #d91667;
+    border-left-color: #d91667;
+}
+
+.sdg11-title {
+    color: #fca315;
+    border-left-color: #fca315;
+}
+
+.target-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.target-list li {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #080808;
+}
+
+.target-list li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #5b86e5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .overview-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .knowledge-title {
+        font-size: 2.2rem;
+    }
+}

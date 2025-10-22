@@ -1,0 +1,136 @@
+/* src/pages/Login.css */
+
+/* This is the new container that fills the page */
+.login-page-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    /* The white background of the whole page */
+    padding: 20px;
+
+    /* These three lines are the magic for centering! */
+    display: flex;
+    justify-content: center;
+    /* Centers horizontally */
+    align-items: center;
+    /* Centers vertically */
+}
+
+/* This is the form itself */
+.login-form-container {
+    width: 100%;
+    max-width: 450px;
+    /* Controls the maximum width on large screens */
+    background-color: #e1f5fe;
+    /* Light blue from the image */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-form-container h2 {
+    text-align: center;
+    color: #0277bd;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.login-form-container p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #039be5;
+    line-height: 1.5;
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0277bd;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #b3e5fc;
+    background-color: #ffffff;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus {
+    border-color: #0288d1;
+    box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.2);
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Space between checkbox and label */
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    /* Override default margin */
+    color: #555;
+    font-weight: 500;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #0288d1;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0288d1;
+}
+
+/* --- NEW STYLES ADDED --- */
+.register-link-container {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+.register-link-container p {
+    font-size: 15px;
+}
+
+.register-link-container a {
+    color: #0288d1;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link-container a:hover {
+    text-decoration: underline;
+}

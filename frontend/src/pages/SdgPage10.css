@@ -1,0 +1,275 @@
+/* src/pages/SdgPage10.css */
+
+/* --- Base & Variables --- */
+:root {
+    --sdg-10: #e5233d;
+    --sdg-11: #fd9d24;
+    --brand-blue: #5b86e5;
+    --brand-dark-blue: #2c3e50;
+    --brand-dark-blue-hover: #34495e;
+}
+
+.sdg10-page-wrapper {
+    background-color: #f9fafb;
+    /* bg-gray-50 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #1f2937;
+    /* text-gray-800 */
+}
+
+/* --- Shared Components (Header, Nav) --- */
+/* (Assuming you have these styles defined globally. Re-added for completeness.) */
+.header {
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.header-link {
+    color: #4b5563;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.header-link:hover {
+    color: var(--brand-blue);
+}
+
+.navigation {
+    background-color: var(--brand-dark-blue);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: 15px 20px;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--brand-dark-blue-hover);
+}
+
+/* --- Main Content --- */
+.main-content {
+    padding: 3rem 0;
+}
+
+.back-link {
+    color: var(--brand-blue);
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.main-title {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #4b5563;
+    margin-top: 1rem;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-sdg-10 {
+    color: var(--sdg-10);
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .main-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.image-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.targets-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+.border-sdg-10 {
+    border-left: 4px solid var(--sdg-10);
+}
+
+.targets-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--brand-dark-blue);
+}
+
+.targets-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #374151;
+}
+
+.targets-list li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* Stats Section */
+.stats-section {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--brand-dark-blue);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.stat-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.stat-card.border-sdg-10 {
+    border-top: 4px solid var(--sdg-10);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #4b5563;
+}
+
+/* CTA Card */
+.cta-card {
+    color: white;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.bg-sdg-10 {
+    background-color: var(--sdg-10);
+}
+
+.cta-title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-text {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+.cta-button.text-sdg-10 {
+    color: var(--sdg-10);
+}
