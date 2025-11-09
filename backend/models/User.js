@@ -9,7 +9,6 @@ const UserSchema = new mongoose.Schema({
     password: { type: String, required: true }
 });
 
-// This function runs before a user is saved to the database
 UserSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
         return next();
