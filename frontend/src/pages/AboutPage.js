@@ -1,29 +1,14 @@
-// src/pages/AboutPage.js
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './AboutPage.css'; // We will create this CSS file next
+import Header from '../components/Header'; // Use the reusable Header
+import './AboutPage.css';
 
 const AboutPage = () => {
     return (
         <div className="about-page-wrapper">
-            {/* Reusing the same header structure from HomePage for consistency */}
-            <header className="header">
-                <div className="container header-content">
-                    <Link to="/" className="logo-link">
-                        <div className="logo">
-                            <span role="img" aria-label="globe" className="logo-icon">🌍</span>
-                            <span className="logo-text">SDG Knowledge Hub</span>
-                        </div>
-                    </Link>
-                    <div className="header-actions">
-                        <Link to="/login" className="header-link">Login</Link>
-                        <Link to="/register" className="header-link">Registration</Link>
-                    </div>
-                </div>
-            </header>
+            
+            <Header /> {/* Reusable Header component */}
 
-            {/* Reusing the navigation structure */}
             <nav className="navigation">
                 <div className="container">
                     <ul className="nav-links">
@@ -35,7 +20,6 @@ const AboutPage = () => {
                     </ul>
                 </div>
             </nav>
-
 
             <main className="about-main-content">
                 <section className="about-hero">
@@ -71,39 +55,24 @@ const AboutPage = () => {
                             These programs are the backbone of our mission. Your participation is key to building truly sustainable and equitable communities.
                         </p>
                         <div className="initiatives-grid">
-                            {/* Initiative Card 1 */}
                             <div className="initiative-card">
                                 <h3 className="initiative-title">Urban Equality Program</h3>
-                                <p className="initiative-description">
-                                    Help map and review the accessibility of public buildings, transportation, and services in your area. Your feedback directly populates our platform and advocates for urban improvements.
-                                </p>
+                                <p className="initiative-description">Help map and review the accessibility of public buildings...</p>
                                 <button className="initiative-btn"><Link to="/payment">Volunteer Now</Link></button>
                             </div>
-
-                            {/* Initiative Card 2 */}
                             <div className="initiative-card">
                                 <h3 className="initiative-title">Green Infrastructure Initiative</h3>
-                                <p className="initiative-description">
-                                    Contribute to creating accessible green spaces. Join community efforts to design and build inclusive parks, gardens, and recreational areas that everyone can enjoy.
-                                </p>
+                                <p className="initiative-description">Contribute to creating accessible green spaces...</p>
                                 <button className="initiative-btn"><Link to="/payment">Get Involved</Link></button>
                             </div>
-
-                            {/* Initiative Card 3 */}
                             <div className="initiative-card">
                                 <h3 className="initiative-title">Inclusive Housing Project</h3>
-                                <p className="initiative-description">
-                                    Advocate for and contribute data on accessible housing. Work with local developers and policymakers to ensure new residential projects meet universal design standards.
-                                </p>
+                                <p className="initiative-description">Advocate for and contribute data on accessible housing...</p>
                                 <button className="initiative-btn">Share Your Ideas</button>
                             </div>
-
-                            {/* Initiative Card 4 */}
                             <div className="initiative-card">
                                 <h3 className="initiative-title">Sustainable Transport Network</h3>
-                                <p className="initiative-description">
-                                    Rate and review the accessibility of your local public transport system. Help us identify gaps and campaign for fully accessible buses, trains, and stations for seamless travel.
-                                </p>
+                                <p className="initiative-description">Rate and review the accessibility of your local public transport system...</p>
                                 <button className="initiative-btn">Share Your Experience</button>
                             </div>
                         </div>
@@ -111,7 +80,6 @@ const AboutPage = () => {
                 </section>
             </main>
 
-            {/* Reusing the footer from HomePage */}
             <footer className="footer">
                 <div className="container">
                     <div className="footer-content">
@@ -121,19 +89,11 @@ const AboutPage = () => {
                         </div>
                         <div className="footer-section">
                             <h4 className="footer-title">Quick Links</h4>
-                            <ul>
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Get Involved</a></li>
-                            </ul>
+                            <ul><li><a href="#">About Us</a></li><li><a href="#">Get Involved</a></li></ul>
                         </div>
                         <div className="footer-section">
                             <h4 className="footer-title">Contact</h4>
-                            <ul>
-                                <li>Shravani Nikte</li>
-                                <li>Sakshi Pandey</li>
-                                <li>Suman Panigrahi</li>
-                                <li>Mudra Pawar</li>
-                            </ul>
+                            <ul><li>Shravani Nikte</li><li>Sakshi Pandey</li><li>Suman Panigrahi</li><li>Mudra Pawar</li></ul>
                         </div>
                     </div>
                     <div className="footer-bottom">

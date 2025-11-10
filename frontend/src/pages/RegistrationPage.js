@@ -36,7 +36,7 @@ function RegistrationPage() {
 
         try {
             // Send the form data to your backend registration endpoint
-            const res = await axios.post('http://localhost:5000/api/auth/register', data);
+            const res = await axios.post('https://sdgpr-backend.onrender.com/api/auth/register', data);
 
             console.log(res.data); // Should show server response (e.g., token)
             alert('Registration successful!');

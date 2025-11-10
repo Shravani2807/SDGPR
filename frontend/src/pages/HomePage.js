@@ -1,56 +1,44 @@
-import React, { useState, useEffect, useRef } from 'react'; // Import new hooks
+// FULL CODE for: src/pages/HomePage.js (Refactored)
+
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header'; // <-- STEP 1: Import our new reusable Header
 import "./HomePage.css";
 
 function HomePage() {
-    // --- CHANGE #1: Simplified state to a single boolean for the dropdown ---
+    // --- All your existing logic for this page stays the same ---
     const [isDropdownOpen, setDropdownOpen] = useState(false);
     const [activeGoal, setActiveGoal] = useState(null);
-    const dropdownRef = useRef(null); // Create a ref to reference the dropdown element
+    const dropdownRef = useRef(null);
 
     const sdgGoals = [
         { number: 10, title: "Reduced Inequalities", color: "#d91667", icon: "⚖️" },
         { number: 11, title: "Sustainable Cities and Communities", color: "#fca315", icon: "🏙️" },
     ];
 
-    // --- CHANGE #2: A simple function to toggle the state ---
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
     };
 
-    // --- CHANGE #3: Hook to handle clicks outside the dropdown ---
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // If the dropdown is open and the click is outside the dropdown menu, close it
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setDropdownOpen(false);
             }
         };
-
-        // Add the event listener when the component mounts
         document.addEventListener("mousedown", handleClickOutside);
-
-        // Cleanup the event listener when the component unmounts
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, []); // The empty array ensures this effect runs only once
+    }, []);
 
 
     return (
         <div className="homepage-wrapper">
-            <header className="header">
-                <div className="container header-content">
-                    <div className="logo">
-                        <span role="img" aria-label="globe" className="logo-icon">🌍</span>
-                        <span className="logo-text">SDG Knowledge Hub</span>
-                    </div>
-                    <div className="header-actions">
-                        <Link to="/login" className="header-link">Login</Link>
-                        <Link to="/register" className="header-link">Registration</Link>
-                    </div>
-                </div>
-            </header>
+
+            {/* --- STEP 2: Use the reusable Header component --- */}
+            {/* The old <header> block is completely removed from this file. */}
+            <Header />
 
             <nav className="navigation">
                 <div className="container">
@@ -59,18 +47,18 @@ function HomePage() {
                             <Link to="/" className="nav-link">Home</Link>
                         </li>
 
-                        {/* --- CHANGE #4: Attach the ref and add conditional class + onClick event --- */}
                         <li
                             ref={dropdownRef}
                             className={`nav-item dropdown ${isDropdownOpen ? 'open' : ''}`}
                         >
-                            {/* The link now acts as a button to toggle the dropdown */}
                             <a href="#" className="nav-link" onClick={toggleDropdown}>
                                 SDG Knowledge ▼
                             </a>
                             <div className="dropdown-menu">
-                                <Link to="/sdg-knowledge#overview" onClick={() => setDropdownOpen(false)}>Overview</Link>
-                                <Link to="/sdg-knowledge#targets" onClick={() => setDropdownOpen(false)}>Goals & Targets</Link>
+                                {/* These links still have an issue. If SdgKnowledgePage is not refactored for smooth scrolling, this will break routing. */}
+                                {/* Let's fix it by routing and then relying on the component to handle the scroll */}
+                                <Link to="/sdg-knowledge" onClick={() => setDropdownOpen(false)}>Overview</Link>
+                                <Link to="/sdg-knowledge" onClick={() => setDropdownOpen(false)}>Goals & Targets</Link>
                             </div>
                         </li>
 
@@ -87,9 +75,8 @@ function HomePage() {
                         <h1 className="hero-title">Sustainable Development Goals</h1>
                         <p className="hero-subtitle">Transforming our world through reduced inequalities and sustainable communities.</p>
                         <div className="hero-buttons">
-                            <button className="cta-btn primary"><Link to="/about"> Explore Initiatives</Link></button>
-
-                            <button className="cta-btn secondary"><Link to="/payment">Take Action</Link></button>
+                            <button className="cta-btn primary"><Link to="/about" style={{ textDecoration: 'none', color: 'inherit' }}> Explore Initiatives</Link></button>
+                            <button className="cta-btn secondary"><Link to="/payment" style={{ textDecoration: 'none', color: 'inherit' }}>Take Action</Link></button>
                         </div>
                     </div>
                 </section>
@@ -143,8 +130,8 @@ function HomePage() {
                         <div className="footer-section">
                             <h4 className="footer-title">Quick Links</h4>
                             <ul>
-                                <li><Link to ="/about">About Us</Link></li>
-                                <li><Link to ="/payment">Get Involved</Link></li>
+                                <li><Link to="/about">About Us</Link></li>
+                                <li><Link to="/payment">Get Involved</Link></li>
                             </ul>
                         </div>
                         <div className="footer-section">

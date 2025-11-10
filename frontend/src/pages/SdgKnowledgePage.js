@@ -1,23 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Using Link for internal navigation
-import './SdgKnowledgePage.css'; // We will create this new CSS file
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../components/Header'; // Use the reusable Header
+import './SdgKnowledgePage.css';
 
 function SdgKnowledgePage() {
+    const overviewRef = useRef(null);
+    const targetsRef = useRef(null);
+
+    const handleScrollTo = (ref) => {
+        if (ref.current) {
+            ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <div className="knowledge-page-wrapper">
-            {/* The header and navigation can be a shared component, but for now we repeat it */}
-            <header className="header">
-                <div className="container header-content">
-                    <div className="logo">
-                        <span role="img" aria-label="globe" className="logo-icon">🌍</span>
-                        <span className="logo-text">SDG Knowledge Hub</span>
-                    </div>
-                    <div className="header-actions">
-                        <Link to="/login" className="header-link">Login</Link>
-                        <Link to="/register" className="header-link">Registration</Link>
-                    </div>
-                </div>
-            </header>
+            
+            <Header /> {/* Reusable Header component */}
+
             <nav className="navigation">
                 <div className="container">
                     <ul className="nav-links">
@@ -25,19 +25,19 @@ function SdgKnowledgePage() {
                         <li className="nav-item dropdown open">
                             <Link to="/sdg-knowledge" className="nav-link">SDG Knowledge ▼</Link>
                             <div className="dropdown-menu" style={{ display: 'block' }}>
-                                <a href="#overview">Overview</a>
-                                <a href="#targets">Goals & Targets</a>
+                                <div className="dropdown-item" onClick={() => handleScrollTo(overviewRef)}>Overview</div>
+                                <div className="dropdown-item" onClick={() => handleScrollTo(targetsRef)}>Goals & Targets</div>
                             </div>
                         </li>
-                        <li className="nav-item"><Link to="#" className="nav-link">SDG 10</Link></li>
-                        <li className="nav-item"><Link to="#" className="nav-link">SDG 11</Link></li>
-                        <li className="nav-item"><Link to="#" className="nav-link">About us</Link></li>
+                        <li className="nav-item"><Link to="/sdg10" className="nav-link">SDG 10</Link></li>
+                        <li className="nav-item"><Link to="/sdg11" className="nav-link">SDG 11</Link></li>
+                        <li className="nav-item"><Link to="/about" className="nav-link">About us</Link></li>
                     </ul>
                 </div>
             </nav>
 
             <main className="main-content-knowledge">
-                <section id="overview" className="knowledge-section">
+                <section ref={overviewRef} id="overview" className="knowledge-section">
                     <div className="container">
                         <h1 className="knowledge-title">SDG Knowledge Overview</h1>
                         <p className="knowledge-intro">
@@ -56,7 +56,7 @@ function SdgKnowledgePage() {
                     </div>
                 </section>
 
-                <section id="targets" className="knowledge-section alt-background">
+                <section ref={targetsRef} id="targets" className="knowledge-section alt-background">
                     <div className="container">
                         <h2 className="section-title">Official Goals & Targets</h2>
                         
@@ -83,7 +83,6 @@ function SdgKnowledgePage() {
                 </section>
             </main>
 
-            {/* Reusing the footer from the main page */}
             <footer className="footer">
                 <div className="container">
                     <p>© 2025 SDG Knowledge Hub</p>

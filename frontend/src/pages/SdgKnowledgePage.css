@@ -102,9 +102,29 @@
     background-color: #f5f5f5;
 }
 
+/* --- ADDED FOR SMOOTH SCROLLING --- */
+/* These new rules style the <div>s to look and feel like the old <a> links */
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    /* Makes the mouse a pointer on hover */
+    transition: background-color 0.2s ease;
+    /* Adds a smooth hover effect */
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+    /* Adds a hover background color */
+}
+
+/* --- END OF ADDED STYLES --- */
+
+
 /* Main content styles for the knowledge page */
 .main-content-knowledge {
-    background-color: #5b86e5 ;
+    background-color: #5b86e5;
     width: 100%;
     padding: 60px 0;
 }
